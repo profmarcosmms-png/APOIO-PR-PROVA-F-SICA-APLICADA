@@ -53,10 +53,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
-.header-texto { flex: 1; min-width: 0; }
+.header-texto { flex: 1; min-width: 220px; }
 
 header h1 { margin: 0 0 4px 0; font-size: 1.35rem; line-height: 1.2; color: #0369a1; }
 header p { margin: 0; font-size: 0.85rem; color: #0c4a6e; }
@@ -234,6 +235,57 @@ header p { margin: 0; font-size: 0.85rem; color: #0c4a6e; }
 .resposta-final strong { color: #15803d; }
 
 footer { text-align: center; margin-top: 24px; padding: 10px; color: #64748b; font-size: 0.78rem; }
+
+/* ===== VERSÃO MOBILE ===== */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 16px 14px;
+        gap: 10px;
+        border-radius: 16px;
+    }
+
+    .header-logo-box {
+        order: -1;
+    }
+    .header-logo-box img { height: 44px; }
+
+    .header-texto { width: 100%; }
+    header h1 { font-size: 1.15rem; }
+    header p { font-size: 0.78rem; }
+    .author-tag { margin-top: 8px; }
+
+    .info-turma {
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px 14px;
+    }
+
+    .summary-box { padding: 12px 14px; }
+    .summary-grid { grid-template-columns: 1fr; gap: 8px; }
+
+    .exercise-card { padding: 12px 14px; }
+    .exercise-title { font-size: 0.92rem; }
+    .enunciado { font-size: 0.88rem; }
+
+    .passo { padding: 10px 10px; }
+    .passo-calculo,
+    .explicacao,
+    .nav-passo-inline,
+    .passo-analise .passo-calculo,
+    .passo-analise ul {
+        margin-left: 6px;
+    }
+
+    .passo-titulo { font-size: 0.84rem; }
+    .btn-passo { width: 100%; text-align: center; padding: 10px 14px; }
+    .controle-passos { flex-direction: column; align-items: stretch; }
+}
+
 </style>
 </head>
 <body>
